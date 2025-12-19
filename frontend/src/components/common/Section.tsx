@@ -1,9 +1,11 @@
 import CardServicos from '../servicos/cardServicos'
 
-export default function Section(){
+export default function Section() {
     return (
         <>
-        <CardServicos/>
+            <section className="">
+                <CardServicos />
+            </section>
         </>
     )
 }
