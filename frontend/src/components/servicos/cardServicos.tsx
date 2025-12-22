@@ -1,39 +1,44 @@
+const servicos = [
+  {
+    titulo: "Osteopatia",
+    descricao: "Terapia manual para dores crónicas e postura.",
+  },
+  {
+    titulo: "Massagem Desportiva",
+    descricao: "Recuperação muscular para atletas e praticantes de exercício.",
+  },
+  {
+    titulo: "Massagem de Recuperação",
+    descricao: "Alívio de tensões e bem-estar após esforço físico.",
+  },
+]
+
 export default function CardServicos() {
-    return (
-        <div className="flex flex-col gap-12">
-            {/* Título */}
-            <div>
-                <p className="text-2xl font-semibold text-gray-800">
-                    Descobre como podemos ajudar-te
-                </p>
-            </div>
+  return (
+    <div className="flex flex-col gap-12 py-8">
+      {/* Título */}
+      <div className="text-center">
+        <p className="text-3xl font-normal text-gray-800 italic">
+          Descobre como podemos ajudar-te
+        </p>
+      </div>
 
-            {/* Grid de Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                {/* Card */}
-                <div className="p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow bg-white">
-                    <h2 className="text-xl font-semibold text-gray-900 mb-2">Osteopatia</h2>
-                    <p className="text-gray-600">
-                        Terapia manual para dores crónicas e postura.
-                    </p>
-                </div>
-
-                <div className="p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow bg-white">
-                    <h2 className="text-xl font-semibold text-gray-900 mb-2">Massagem Desportiva</h2>
-                    <p className="text-gray-600">
-                        Recuperação muscular para atletas e praticantes de exercício.
-                    </p>
-                </div>
-
-                <div className="p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow bg-white">
-                    <h2 className="text-xl font-semibold text-gray-900 mb-2">Massagem de Recuperação</h2>
-                    <p className="text-gray-600">
-                        Alívio de tensões e bem-estar após esforço físico.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    )
+      {/* Grid de Cards */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 w-full">
+        {servicos.map((servico, index) => (
+          <div
+            key={index}
+            className="bg-white p-8 border-4 border-[#4A9FD8] rounded-lg shadow-sm hover:shadow-lg transition-shadow flex flex-col items-center justify-center min-h-[280px]"
+          >
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              {servico.titulo}
+            </h2>
+            <p className="text-gray-700 text-center leading-relaxed">
+              {servico.descricao}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
 }
